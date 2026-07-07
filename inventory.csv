@@ -1,0 +1,22 @@
+Name,Category,Price,Quantity,Available,Description
+Potato,Vegetables,18,1 kg,TRUE,aalu aloo alu
+Onion,Vegetables,40,1 kg,TRUE,pyaaz piaja kanda
+Garlic,Vegetables,200,1 kg,TRUE,lahsun rasuna
+Ginger,Vegetables,150,1 kg,TRUE,adrak ada
+Banana,Fruits,50,1 dozen,TRUE,kela kadali
+Red Chilli Powder,Spices,40,100g,TRUE,lal mirch lanka gunda
+Coriander Powder,Spices,35,100g,TRUE,dhaniya powder dhania gunda
+Cumin Seeds,Spices,50,100g,TRUE,jeera jira
+Mustard Seeds,Spices,20,100g,TRUE,sarson sorisha
+Black Pepper,Spices,80,100g,TRUE,kali mirch gol maricha
+Garam Masala,Spices,60,100g,TRUE,garam masala
+Cardamom,Spices,150,50g,TRUE,elaichi alaicha
+Cloves,Spices,120,50g,TRUE,laung labanga
+Cinnamon,Spices,80,50g,TRUE,dalchini dalchini
+Toor Dal,Grains & Pulses,150,1 kg,TRUE,arhar dal harada dali
+Moong Dal,Grains & Pulses,120,1 kg,TRUE,moong dal muga dali
+Chana Dal,Grains & Pulses,90,1 kg,TRUE,chana dal buta dali
+Masoor Dal,Grains & Pulses,100,1 kg,TRUE,masoor dal masura dali
+Rice,Grains & Pulses,60,1 kg,TRUE,chawal chaula
+Wheat Flour,Grains & Pulses,40,1 kg,TRUE,atta ata
+Besan,Grains & Pulses,80,1 kg,TRUE,besan besana
