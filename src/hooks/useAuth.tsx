@@ -27,7 +27,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
     
     // If using mock backend, everyone is admin for demo purposes
-    if (!supabase.supabaseUrl || supabase.supabaseUrl.includes('your-project')) {
+    const url = import.meta.env.VITE_SUPABASE_URL || '';
+    if (!url || url.includes('your-project')) {
       setIsAdmin(true);
       return;
     }

@@ -13,7 +13,6 @@ import { EmptyState } from '@/components/shared/EmptyState';
 import {
   Plus, Pencil, Trash2, X, Check, IndianRupee, Search, ToggleLeft, ToggleRight,
 } from 'lucide-react';
-import { formatPrice } from '@/lib/utils';
 import type { Product } from '@/types';
 
 export function ProductManagement() {
