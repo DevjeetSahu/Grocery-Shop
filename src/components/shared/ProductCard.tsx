@@ -15,16 +15,30 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       style={{ boxShadow: 'var(--shadow-card)' }}
       aria-label={`${product.name}, ${formatPrice(product.price)} for ${product.quantity}`}
     >
-      {/* Icon placeholder */}
+      {/* Product Image or Placeholder */}
       <div
-        className="w-full aspect-square rounded-lg mb-2 flex items-center justify-center"
+        className="w-full aspect-square rounded-lg mb-2 flex items-center justify-center overflow-hidden"
         style={{ backgroundColor: 'var(--color-surface-secondary)' }}
       >
-        <Package
-          size={32}
-          style={{ color: 'var(--color-text-muted)' }}
-          className="group-hover:scale-110 transition-transform duration-200"
-        />
+        {product.image_url ? (
+          <img
+            src={product.image_url}
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            onError={(e) => {
+              // Fallback if image fails to load
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement?.classList.add('fallback-icon');
+            }}
+          />
+        ) : (
+          <Package
+            size={32}
+            style={{ color: 'var(--color-text-muted)' }}
+            className="group-hover:scale-110 transition-transform duration-200 fallback-icon-svg"
+          />
+        )}
       </div>
 
       {/* Product info */}

@@ -32,11 +32,11 @@ sqlOutput += `\nON CONFLICT (name) DO NOTHING;\n\n`;
 
 // 2. Insert products
 sqlOutput += `-- 2. Insert Products\n`;
-sqlOutput += `INSERT INTO products (name, category_id, price, quantity, is_available, description) VALUES\n`;
+sqlOutput += `INSERT INTO products (name, category_id, price, quantity, is_available, description, image_url) VALUES\n`;
 
 const productValues = dataRows.map(row => {
-  // Assuming CSV format: Name, Category, Price, Quantity, Available, Description
-  const [name, category, price, quantity, available, description] = row.split(',').map(s => s?.trim() || '');
+  // Assuming CSV format: Name, Category, Price, Quantity, Available, Description, Image
+  const [name, category, price, quantity, available, description, image] = row.split(',').map(s => s?.trim() || '');
   
   const cleanName = name.replace(/'/g, "''");
   const cleanCategory = category.replace(/'/g, "''");
@@ -44,12 +44,13 @@ const productValues = dataRows.map(row => {
   const cleanQuantity = quantity.replace(/'/g, "''");
   const isAvailable = available?.toUpperCase() === 'TRUE' || available === '1';
   const cleanDesc = description ? `'${description.replace(/'/g, "''")}'` : 'NULL';
+  const cleanImage = image ? `'${image.replace(/'/g, "''")}'` : 'NULL';
 
-  return `  ('${cleanName}', (SELECT id FROM categories WHERE name = '${cleanCategory}'), ${cleanPrice}, '${cleanQuantity}', ${isAvailable}, ${cleanDesc})`;
+  return `  ('${cleanName}', (SELECT id FROM categories WHERE name = '${cleanCategory}'), ${cleanPrice}, '${cleanQuantity}', ${isAvailable}, ${cleanDesc}, ${cleanImage})`;
 });
 
 sqlOutput += productValues.join(',\n');
-sqlOutput += `\nON CONFLICT (name, quantity) DO UPDATE SET price = EXCLUDED.price, is_available = EXCLUDED.is_available, description = EXCLUDED.description;\n`;
+sqlOutput += `\nON CONFLICT (name, quantity) DO UPDATE SET price = EXCLUDED.price, is_available = EXCLUDED.is_available, description = EXCLUDED.description, image_url = EXCLUDED.image_url;\n`;
 
 fs.writeFileSync(SQL_FILE, sqlOutput);
 

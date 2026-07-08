@@ -51,12 +51,24 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
           <X size={18} style={{ color: 'var(--color-text-secondary)' }} />
         </button>
 
-        {/* Product icon area */}
+        {/* Product icon area / Hero Image */}
         <div
-          className="w-full h-40 flex items-center justify-center"
+          className="w-full h-48 sm:h-56 flex items-center justify-center overflow-hidden relative"
           style={{ backgroundColor: 'var(--color-surface-secondary)' }}
         >
-          <Package size={56} style={{ color: 'var(--color-text-muted)' }} />
+          {product.image_url ? (
+            <img
+              src={product.image_url}
+              alt={product.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement?.classList.add('fallback-icon-modal');
+              }}
+            />
+          ) : (
+            <Package size={64} style={{ color: 'var(--color-text-muted)' }} />
+          )}
         </div>
 
         {/* Content */}

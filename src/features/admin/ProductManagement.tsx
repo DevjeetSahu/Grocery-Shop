@@ -37,6 +37,7 @@ export function ProductManagement() {
     quantity: '',
     is_available: true,
     description: '',
+    image_url: '',
   });
 
   const resetForm = () => {
@@ -47,6 +48,7 @@ export function ProductManagement() {
       quantity: '',
       is_available: true,
       description: '',
+      image_url: '',
     });
     setShowForm(false);
     setEditingId(null);
@@ -60,6 +62,7 @@ export function ProductManagement() {
       quantity: product.quantity,
       is_available: product.is_available,
       description: product.description || '',
+      image_url: product.image_url || '',
     });
     setEditingId(product.id);
     setShowForm(true);
@@ -76,7 +79,7 @@ export function ProductManagement() {
       quantity: formData.quantity,
       is_available: formData.is_available,
       description: formData.description || null,
-      image_url: null,
+      image_url: formData.image_url || null,
     };
 
     if (editingId) {
@@ -257,6 +260,16 @@ export function ProductManagement() {
             className="w-full h-10 px-3 rounded-lg border text-sm focus:outline-none focus:ring-2"
             style={{ borderColor: 'var(--color-border)' }}
             id="product-description-input"
+          />
+
+          <input
+            type="url"
+            value={formData.image_url}
+            onChange={(e) => setFormData((f) => ({ ...f, image_url: e.target.value }))}
+            placeholder="Image URL (optional)"
+            className="w-full h-10 px-3 rounded-lg border text-sm focus:outline-none focus:ring-2"
+            style={{ borderColor: 'var(--color-border)' }}
+            id="product-image-input"
           />
 
           <label className="flex items-center gap-2 text-sm cursor-pointer">
