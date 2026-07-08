@@ -108,7 +108,7 @@ export function LoginPage() {
         <form onSubmit={handleEmailLogin} className="space-y-3">
           <div className="relative">
             <div
-              className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+              className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
               style={{ color: 'var(--color-text-muted)' }}
             >
               <Mail size={16} />
@@ -119,7 +119,7 @@ export function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="admin@example.com"
               required
-              className="w-full h-11 pl-10 pr-4 rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2"
+              className="w-full h-11 pl-12 pr-4 rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2"
               style={{
                 borderColor: 'var(--color-border)',
                 color: 'var(--color-text-primary)',
@@ -129,7 +129,7 @@ export function LoginPage() {
           </div>
           <div className="relative">
             <div
-              className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+              className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
               style={{ color: 'var(--color-text-muted)' }}
             >
               <Lock size={16} />
@@ -140,7 +140,7 @@ export function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required
-              className="w-full h-11 pl-10 pr-4 rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2"
+              className="w-full h-11 pl-12 pr-4 rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2"
               style={{
                 borderColor: 'var(--color-border)',
                 color: 'var(--color-text-primary)',

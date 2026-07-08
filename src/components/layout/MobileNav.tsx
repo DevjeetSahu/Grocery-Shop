@@ -16,7 +16,7 @@ export function MobileNav() {
       style={{ borderColor: 'var(--color-border)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       aria-label="Main navigation"
     >
-      <div className="flex items-center justify-around h-16 max-w-lg mx-auto">
+      <div className="flex items-center justify-around w-full h-16 max-w-lg mx-auto px-2">
         {navItems.map(({ path, label, icon: Icon }) => {
           const isActive = path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 

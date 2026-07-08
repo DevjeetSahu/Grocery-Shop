@@ -45,10 +45,10 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/5 hover:bg-black/10 transition-colors"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm hover:bg-white transition-colors"
           aria-label="Close"
         >
-          <X size={18} style={{ color: 'var(--color-text-secondary)' }} />
+          <X size={18} style={{ color: 'var(--color-text-primary)' }} />
         </button>
 
         {/* Product icon area / Hero Image */}

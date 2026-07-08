@@ -18,17 +18,17 @@ export function HomePage() {
       {/* Search bar link */}
       <Link
         to="/search"
-        className="flex items-center gap-3 w-full h-11 px-4 rounded-xl border bg-white text-sm transition-colors hover:border-[var(--color-primary-300)]"
+        className="flex items-center w-full h-11 px-5 rounded-xl border bg-white text-sm transition-colors hover:border-[var(--color-primary-300)]"
         style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-muted)' }}
         id="home-search-trigger"
       >
         <Search size={18} />
-        <span>Search for products...</span>
+        <span className="ml-3">Search for products...</span>
       </Link>
 
       {/* Categories */}
       <section>
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-5">
           <h2 className="text-base font-bold" style={{ color: 'var(--color-text-primary)' }}>
             Categories
           </h2>
@@ -53,7 +53,7 @@ export function HomePage() {
 
       {/* Products */}
       <section>
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-5">
           <h2 className="text-base font-bold" style={{ color: 'var(--color-text-primary)' }}>
             All Products
           </h2>

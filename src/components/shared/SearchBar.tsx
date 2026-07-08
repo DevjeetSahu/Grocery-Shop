@@ -55,7 +55,7 @@ export function SearchBar({
   return (
     <div className="relative">
       <div
-        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+        className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
         style={{ color: 'var(--color-text-muted)' }}
       >
         <Search size={18} />
@@ -67,7 +67,7 @@ export function SearchBar({
         onChange={handleChange}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        className="w-full h-11 pl-10 pr-10 rounded-xl border text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2"
+        className="w-full h-11 pl-12 pr-10 rounded-xl border text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2"
         style={{
           backgroundColor: 'var(--color-surface)',
           borderColor: 'var(--color-border)',

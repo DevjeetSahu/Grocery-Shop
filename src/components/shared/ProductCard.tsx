@@ -11,13 +11,13 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
     <button
       onClick={() => onSelect?.(product)}
-      className="group w-full text-left bg-white rounded-xl p-3 transition-all duration-200 hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]"
+      className="group w-full text-left bg-white rounded-xl transition-all duration-200 hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] overflow-hidden flex flex-col"
       style={{ boxShadow: 'var(--shadow-card)' }}
       aria-label={`${product.name}, ${formatPrice(product.price)} for ${product.quantity}`}
     >
       {/* Product Image or Placeholder */}
       <div
-        className="w-full aspect-square rounded-lg mb-2 flex items-center justify-center overflow-hidden"
+        className="w-full aspect-square flex items-center justify-center overflow-hidden shrink-0"
         style={{ backgroundColor: 'var(--color-surface-secondary)' }}
       >
         {product.image_url ? (
@@ -42,21 +42,23 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       </div>
 
       {/* Product info */}
-      <div className="space-y-1">
-        <h3
-          className="text-sm font-semibold leading-tight line-clamp-2"
-          style={{ color: 'var(--color-text-primary)' }}
-        >
-          {product.name}
-        </h3>
+      <div className="p-3 space-y-1 flex-1 flex flex-col justify-between w-full">
+        <div>
+          <h3
+            className="text-sm font-semibold leading-tight line-clamp-2"
+            style={{ color: 'var(--color-text-primary)' }}
+          >
+            {product.name}
+          </h3>
 
-        <p className="text-[11px] font-medium" style={{ color: 'var(--color-text-muted)' }}>
-          {product.quantity}
-        </p>
+          <p className="text-[11px] font-medium" style={{ color: 'var(--color-text-muted)' }}>
+            {product.quantity}
+          </p>
+        </div>
 
         <div className="flex items-center justify-between pt-1">
-          <span className="price-tag text-base flex items-center gap-0.5">
-            <IndianRupee size={14} strokeWidth={2.5} />
+          <span className="price-tag text-base flex items-center">
+            <IndianRupee size={14} strokeWidth={2.5} className="mr-0.5" />
             {product.price}
           </span>
 
