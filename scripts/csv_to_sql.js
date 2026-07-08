@@ -12,7 +12,7 @@ if (!fs.existsSync(CSV_FILE)) {
   process.exit(1);
 }
 
-const csv = fs.readFileSync(CSV_FILE, 'utf-8');
+const csv = fs.readFileSync('inventory2.csv', 'utf8');
 const lines = csv.split('\n').filter(line => line.trim() !== '');
 
 // Skip header row
